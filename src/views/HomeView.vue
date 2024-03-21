@@ -45,13 +45,12 @@ const selectedPokemon = async (pokemon) => {
         <div class="row pt-4 pb-5">
             <div class="col-sm-12 col-md-6">
                 {{ console.log("Objeto inteiro",selectPokemon) }}
-                {{ console.log("Antes do componente nome",selectPokemon?.name) }}
+                {{ console.log("Antes do componente name",selectPokemon?.name) }}
                 <CardSelected
                     :nome="selectPokemon?.name"
                     :xp="selectPokemon?.base_experience"
                     :height="selectPokemon?.height"
                     :img="selectPokemon?.sprites?.other?.dream_world?.front_default"
-                    :loading="loading"
                 />
             </div>
             <div class="col-sm-12 col-md-6">
