@@ -1,8 +1,11 @@
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, onUpdated } from 'vue';
 
 const props = defineProps(['nome', 'xp', 'height', 'img', 'loading']);
-console.log(props.nome, props.xp, props .height)
+
+onUpdated(()=>{
+    console.log(props.nome, props.xp, props .height)
+})
 </script>
 
 <template>
