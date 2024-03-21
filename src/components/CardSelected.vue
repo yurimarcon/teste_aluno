@@ -2,6 +2,7 @@
 import { defineProps } from 'vue';
 
 const props = defineProps(['nome', 'xp', 'height', 'img', 'loading']);
+console.log(props.nome, props.xp, props .height)
 </script>
 
 <template>
@@ -12,7 +13,7 @@ const props = defineProps(['nome', 'xp', 'height', 'img', 'loading']);
     >
     {{ console.log('passou no componente', props.nome) }}
     <img v-if="props.img" height="250" :src="props.img" class="card-img-top pt-2" alt="...">
-    <img v-else height="250" src="https://raw.githubusercontent.com/Jair549/pokevite/a16160030cfc682abb4c7c34843e151acfd5e210/src/assets/egg_pokemon.svg"class="card-img-top pt-2" alt="...">
+    <img v-else height="250" src="https://raw.githubusercontent.com/Jair549/pokevite/a16160030cfc682abb4c7c34843e151acfd5e210/src/assets/egg_pokemon.svg" class="card-img-top pt-2" alt="...">
     <div class="card-body">
         <h5 class="card-title text-center">{{ props.nome ? props.nome : '???' }}</h5>
         <hr/>
