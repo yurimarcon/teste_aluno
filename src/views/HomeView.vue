@@ -32,17 +32,15 @@ const filterSearch = computed(() => {
 const selectedPokemon = async (pokemon) => {
     loading.value = true;
 
-    setTimeout(async ()=>{
-        await fetch(pokemon.url)
-        .then(res => res.json())
-        .then(res => {
-            console.log(res)
-            selectPokemon.value = res
-        })
-        .catch(err => alert(err))
-        .finally(() => loading.value = false)
-    }
-    , 1000);
+    await fetch(pokemon.url)
+    .then(res => res.json())
+    .then(res => {
+        console.log(res)
+        selectPokemon.value = res
+    })
+    .catch(err => alert(err))
+    .finally(() => loading.value = false)
+    
 }
 
 </script >

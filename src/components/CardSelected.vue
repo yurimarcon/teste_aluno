@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, onUpdated } from 'vue';
+import { onUpdated } from 'vue';
 
 const props = defineProps(['nome', 'xp', 'height', 'img', 'loading']);
 
