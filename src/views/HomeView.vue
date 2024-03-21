@@ -147,7 +147,7 @@ const selectPokemon = async (pokemon) => {
         <div class="col-sm-12 col-md-6">
           
           <CardSelected
-          :name="pokemonSelected?.name"
+          :nome="pokemonSelected?.name"
           :xp="pokemonSelected?.base_experience"
           :height="pokemonSelected?.height"
           :img="pokemonSelected?.sprites.other.dream_world.front_default"
@@ -179,8 +179,8 @@ const selectPokemon = async (pokemon) => {
               <ListPokemons 
               v-for="pokemon in pokemonsFiltered"
               :key="pokemon.name"
-              :name="pokemon.name"
-              :urlBaseSvg="urlBaseSvg + pokemon.url.split('/')[6] + '.svg'"
+              :nome="pokemon.name"
+              :urlImage="urlBaseSvg + pokemon.url.split('/')[6] + '.svg'"
               @click="selectPokemon(pokemon)"
               />
             </div>
