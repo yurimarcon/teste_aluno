@@ -3,8 +3,8 @@ import { onUpdated } from 'vue';
 
 const props = defineProps({
     nome: String,
-    xp: String, 
-    height: String, 
+    xp: Number, 
+    height: Number, 
     img: String, 
     loading: Boolean
 });
@@ -21,7 +21,7 @@ onUpdated(()=>{
     :class=" loading ? '' : 'animate__animated animate__flipInX' "
     >
     {{ console.log('passou no componente', props.nome) }}
-    <img v-if="props.img" height="250" :src="props.img" class="card-img-top pt-2" alt="...">
+    <!-- <img v-if="props.img" height="250" :src="props.img" class="card-img-top pt-2" alt="...">
     <img v-else height="250" src="https://raw.githubusercontent.com/Jair549/pokevite/a16160030cfc682abb4c7c34843e151acfd5e210/src/assets/egg_pokemon.svg" class="card-img-top pt-2" alt="...">
     <div class="card-body">
         <h5 class="card-title text-center">{{ props.nome ? props.nome : '???' }}</h5>
@@ -36,7 +36,7 @@ onUpdated(()=>{
                 <span>{{ props.height }}</span>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 </template>
 
