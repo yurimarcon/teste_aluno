@@ -1,6 +1,6 @@
 
 <script setup>
-import {onMounted, reactive, ref, computed, onUpdated} from 'vue';
+import {onMounted, reactive, ref, computed} from 'vue';
 import ListPokemons from '@/components/ListPokemons.vue';
 import CardSelected from "@/components/CardSelected.vue";
 
@@ -31,30 +31,26 @@ const filterSearch = computed(() => {
 
 const selectedPokemon = async (pokemon) => {
     loading.value = true;
-
-    selectPokemon.value = await fetch(pokemon.url)
+    await fetch(pokemon.url)
     .then(res => res.json())
-    .then(res => {
-        console.log(res)
-        return res
-    })
+    .then(res => selectPokemon.value = res)
     .catch(err => alert(err))
-    .finally(() => loading.value = false)   
-}
+    .finally(() => loading.value = false)
 
-onUpdated(()=>{
-    console.log("selectPokemon.value",selectPokemon.value)
-})
+    console.log("Chamou a API", selectPokemon.value);
+}
 
 </script >
 <template>
     <div class="container">
         <div class="row pt-4 pb-5">
             <div class="col-sm-12 col-md-6">
-                {{ console.log("Objeto inteiro",selectPokemon) }}
-                {{ console.log("Antes do componente name",selectPokemon?.name) }}
                 <CardSelected
                     :nome="selectPokemon?.name"
+                    :xp="selectPokemon?.base_experience"
+                    :height="selectPokemon?.height"
+                    :img="selectPokemon?.sprites?.other?.dream_world?.front_default"
+                    :loading="loading"
                 />
             </div>
             <div class="col-sm-12 col-md-6">
