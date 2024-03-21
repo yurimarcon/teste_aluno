@@ -46,7 +46,7 @@ const selectedPokemon = async (pokemon) => {
         <div class="row pt-4 pb-5">
             <div class="col-sm-12 col-md-6">
                 <CardSelected
-                v-if="selectPokemon"
+                    v-if="selectPokemon?.name"
                     :nome="selectPokemon?.name"
                     :xp="selectPokemon?.base_experience"
                     :height="selectPokemon?.height"
