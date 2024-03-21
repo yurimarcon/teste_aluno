@@ -35,7 +35,10 @@ const selectedPokemon = async (pokemon) => {
     setTimeout(async ()=>{
         await fetch(pokemon.url)
         .then(res => res.json())
-        .then(res => selectPokemon.value = res)
+        .then(res => {
+            console.log(res)
+            selectPokemon.value = res
+        })
         .catch(err => alert(err))
         .finally(() => loading.value = false)
     }
