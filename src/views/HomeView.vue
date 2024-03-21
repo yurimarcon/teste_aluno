@@ -46,7 +46,7 @@ const selectedPokemon = async (pokemon) => {
         <div class="row pt-4 pb-5">
             <div class="col-sm-12 col-md-6">
                 <CardSelected
-                    :nome="selectPokemon?.name"
+                    :nome="'Pikachu'"
                     :xp="selectPokemon?.base_experience"
                     :height="selectPokemon?.height"
                     :img="selectPokemon?.sprites?.other?.dream_world?.front_default"
