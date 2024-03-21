@@ -31,9 +31,9 @@ const filterSearch = computed(() => {
 
 const selectedPokemon = async (pokemon) => {
     loading.value = true;
-    await fetch(pokemon.url)
+    selectPokemon.value = await fetch(pokemon.url)
     .then(res => res.json())
-    .then(res => selectPokemon.value = res)
+    .then(res => res)
     .catch(err => alert(err))
     .finally(() => loading.value = false)
 
@@ -46,7 +46,7 @@ const selectedPokemon = async (pokemon) => {
         <div class="row pt-4 pb-5">
             <div class="col-sm-12 col-md-6">
                 <CardSelected
-                    :nome="'Pikachu'"
+                    :nome="selectPokemon?.name"
                     :xp="selectPokemon?.base_experience"
                     :height="selectPokemon?.height"
                     :img="selectPokemon?.sprites?.other?.dream_world?.front_default"
