@@ -4,7 +4,7 @@ import { onUpdated } from 'vue';
 const props = defineProps(['nome', 'xp', 'height', 'img', 'loading']);
 
 onUpdated(()=>{
-    console.log(props.nome, props.xp, props .height)
+    console.log("props:",props)
 })
 </script>
 

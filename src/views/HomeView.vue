@@ -48,6 +48,7 @@ const selectedPokemon = async (pokemon) => {
     <div class="container">
         <div class="row pt-4 pb-5">
             <div class="col-sm-12 col-md-6">
+                {{ console.log("Antes do componente",selectPokemon) }}
                 <CardSelected
                     :nome="selectPokemon?.name"
                     :xp="selectPokemon?.base_experience"
