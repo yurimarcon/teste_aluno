@@ -1,7 +1,7 @@
 <script setup>
 import { onUpdated } from 'vue';
 
-const props = defineProps(['nome', 'xp', 'height', 'img', 'loading']);
+const props = defineProps(["nome", "xp", "height", "img", "loading"]);
 
 onUpdated(()=>{
     console.log("props:",props)
